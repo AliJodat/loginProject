@@ -1,4 +1,4 @@
-package org.logginProject.model;
+package org.loginProject.model;
 
 import javax.persistence.*;
 
@@ -67,11 +67,11 @@ public class Personal {
         this.password = password;
     }
 
-    public org.logginProject.model.GroupPerson getGroupPerson() {
+    public org.loginProject.model.GroupPerson getGroupPerson() {
         return GroupPerson;
     }
 
-    public void setGroupPerson(org.logginProject.model.GroupPerson groupPerson) {
+    public void setGroupPerson(org.loginProject.model.GroupPerson groupPerson) {
         GroupPerson = groupPerson;
     }
 }

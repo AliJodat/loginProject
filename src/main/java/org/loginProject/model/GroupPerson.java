@@ -1,4 +1,4 @@
-package org.logginProject.model;
+package org.loginProject.model;
 
 import javax.persistence.*;
 
