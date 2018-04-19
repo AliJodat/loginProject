@@ -18,6 +18,8 @@ public class Personal {
     private String name;
     @Column
     private String family;
+
+    @Id
     @Column
     private String username;
     @Column

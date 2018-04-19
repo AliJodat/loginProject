@@ -10,8 +10,8 @@ import java.util.Map;
  * @author Ali
  * Create on 4/19/2018 11:03 AM
  */
-@Controller
 
+@Controller
 public class WelcomeController {
 
     // inject via application.properties
@@ -19,9 +19,8 @@ public class WelcomeController {
     private String message = "Hello World";
 
     @RequestMapping("/")
-    public String welcome(Map<String, Object> model) {
-        model.put("message", this.message);
-        return "welcome";
+    public String LoginIndex() {
+        return "Login/LoginIndex";
     }
 
 }
