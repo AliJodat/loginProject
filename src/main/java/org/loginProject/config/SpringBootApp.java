@@ -1,9 +1,12 @@
-package org.loginProject.common;
+package org.loginProject.config;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
 
 /**
  * @author Ali
@@ -11,6 +14,8 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
  */
 
 @SpringBootApplication
+@EnableAutoConfiguration
+@EnableJpaRepositories("org.loginProject.repository.*")
 public class SpringBootApp extends SpringBootServletInitializer {
 
     @Override

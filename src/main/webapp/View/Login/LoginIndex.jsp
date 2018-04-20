@@ -27,26 +27,38 @@
     <%--<jsp:include page="../../Scripts/includes.jsp"></jsp:include>--%>
 
     <link rel="stylesheet" href="../../Scripts/LoginScripts/custom.css">
+    <script type="text/javascript" language="JavaScript" >
 
+        function redirect() {
+
+        }
+
+    </script>
+</head>
 <body>
-<div class="login-form">
-    <form action="" method="post">
-        <h2 class="text-center"> مشخصات</h2>
-        <div class="form-group">
-            <input type="text" class="form-control rtl" placeholder="نام کاربری" required="required">
+<div class="container">
+    <div class="row">
+        <div class="login-form col-sm-4">
+            <form action="" method="post">
+                <h2 class="text-center"> مشخصات</h2>
+                <div class="form-group">
+                    <input type="text" class="form-control rtl" placeholder="نام کاربری" required="required">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control rtl" placeholder="کلمه عبور" required="required">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">ورود</button>
+                </div>
+                <%--<div class="clearfix">
+                    <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
+                    <a href="#" class="pull-right">Forgot Password?</a>
+                </div>--%>
+            </form>
+            <p class="text-center"><a href="/login" >ساخت حساب کاربری جدید</a></p>
         </div>
-        <div class="form-group">
-            <input type="password" class="form-control rtl" placeholder="کلمه عبور" required="required">
-        </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">جستجو</button>
-        </div>
-        <%--<div class="clearfix">
-            <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
-            <a href="#" class="pull-right">Forgot Password?</a>
-        </div>--%>
-    </form>
-    <%--<p class="text-center"><a href="#">Create an Account</a></p>--%>
+
+    </div>
 </div>
 </body>
 </html>

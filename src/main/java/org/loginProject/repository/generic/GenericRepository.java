@@ -21,11 +21,13 @@ public abstract class  GenericRepository<T> implements  IGenericRepository<T>{
     @PersistenceContext
     private EntityManager entityManager;
 
+    @Override
     public List<T> getAll() {
         return entityManager.createQuery("from " + domainClass.getName() + " e where e.deleted = false").getResultList();
     }
 
     @Transactional
+    @Override
     public void add (T entity){
         entityManager.persist(entity);
     }
@@ -35,17 +37,20 @@ public abstract class  GenericRepository<T> implements  IGenericRepository<T>{
         entityManager.remove(entityManager.merge(entity));
     }
 
+    @Override
     @Transactional
     public void deleteEntityById(int entityId){
         Object obj = entityManager.find(domainClass, entityId);
         entityManager.remove(obj);
     }
 
+    @Override
     @Transactional
     public void update (T entity){
         entityManager.merge(entity);
     }
 
+    @Override
     public int count (){
         int count = (int) (entityManager.createQuery("select count(*) from " +domainClass.getName())).getSingleResult();
         return count;

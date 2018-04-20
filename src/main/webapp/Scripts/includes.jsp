@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<link rel="stylesheet" href="<c:url value='/Scripts/bootstrap/css/bootstrap.css' />"    />
+<link rel="stylesheet" href="<c:url value='/Scripts/bootstrap/css/bootstrap.css' />" />
 <script src="<c:url value='/Scripts/jquery/jquery-3.3.1.min.js'/>" > </script>
 <script src="<c:url value='/Scripts/bootstrap/js/bootstrap.js'/>"></script>
 <script src="<c:url value='/Scripts/jquery-tmpl/jquery.tmpl.js'/>"></script>

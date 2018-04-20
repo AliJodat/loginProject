@@ -19,6 +19,7 @@
 
     <dependencies>
 
+        <!--==========================Spring dependency========================================-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -27,6 +28,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>2.0.5.RELEASE</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -37,6 +45,59 @@
             <artifactId>spring-boot-starter-tomcat</artifactId>
             <scope>provided</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>5.0.2.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+
+
+        <!--==========================Hibernate dependency========================================-->
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.2.12.Final</version>
+            <scope>runtime</scope>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.2.12.Final</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.0-api -->
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.0-api</artifactId>
+            <version>1.0.1.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.195</version>
+        </dependency>
+
+
+        <!--==========================Other dependency========================================-->
+        <!-- https://mvnrepository.com/artifact/javax.persistence/persistence-api -->
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs -->
         <dependency>
@@ -68,10 +129,7 @@
             <scope>provided</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-        </dependency>
+
     </dependencies>
 
     <parent>
@@ -87,6 +145,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+
             </plugin>
         </plugins>
     </build>

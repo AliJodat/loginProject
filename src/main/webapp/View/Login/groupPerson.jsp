@@ -7,7 +7,9 @@
 --%>
 
 <!DOCTYPE html>
-<%@ page pageEncoding="UTF-8" %>
+
+
+<%@ page pageEncoding="UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
@@ -15,18 +17,20 @@
 
 <html>
 <head>
+    <%@ include file="../../Scripts/includes.jsp" %>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap Simple Login Form</title>
-    <script src="../../Scripts/jquery/jquery-3.3.1.min.js"></script>
-    <script src="../../Scripts/bootstrap/js/bootstrap.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="../../Scripts/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../../Scripts/LoginScripts/custom.css">
+    <title>Login Form</title>
 
 
-    <jsp:include page="/assets/includes.jsp"></jsp:include>
+    <%--<jsp:include page="../../Scripts/includes.jsp"></jsp:include>--%>
+
+    <link rel="stylesheet" href="../../Scripts/LoginScripts/custom.css">
+    <script type="text/javascript" language="JavaScript" >
+
+    </script>
 
 </head>
 <body>

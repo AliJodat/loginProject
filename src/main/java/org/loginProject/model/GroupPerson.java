@@ -1,6 +1,7 @@
 package org.loginProject.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * @author Ali
@@ -8,7 +9,7 @@ import javax.persistence.*;
  */
 
 @Entity
-public class GroupPerson {
+public class GroupPerson implements Serializable {
 
     @Id
     @SequenceGenerator(sequenceName = "Group_Person_Seq", name = "groupPersonSeq", allocationSize = 1)
