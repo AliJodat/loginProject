@@ -1,5 +1,7 @@
 package org.loginProject.model;
 
+import org.loginProject.model.generic.BaseEntity;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -9,12 +11,9 @@ import java.io.Serializable;
  */
 
 @Entity
-public class Personal implements Serializable {
+@SequenceGenerator(sequenceName = "Group_Person_Seq", name = "groupPersonSeq", allocationSize = 1)
+public class Personal extends BaseEntity implements Serializable {
 
-    @Id
-    @SequenceGenerator(sequenceName = "Group_Person_Seq", name = "groupPersonSeq", allocationSize = 1)
-    @GeneratedValue( strategy = GenerationType.IDENTITY, generator = "groupPersonSeq")
-    private Integer id;
     @Column
     private String name;
     @Column
@@ -30,13 +29,6 @@ public class Personal implements Serializable {
     @JoinColumn(name = "id")
     private GroupPerson GroupPerson;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
