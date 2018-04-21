@@ -56,10 +56,10 @@ public class PersistenceJPAConfig{
     @Bean
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-        dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:xe");
-        dataSource.setUsername( "ali" );
-        dataSource.setPassword( "myjava123" );
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://localhost/loginProject?useSSL=false");
+        dataSource.setUsername( "root" );
+        dataSource.setPassword( "1234" );
         return dataSource;
     }
 
@@ -82,7 +82,7 @@ public class PersistenceJPAConfig{
         final Properties properties = new Properties();
         properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
         properties.setProperty(
-                "hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
+                "hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
 
         return properties;
     }
