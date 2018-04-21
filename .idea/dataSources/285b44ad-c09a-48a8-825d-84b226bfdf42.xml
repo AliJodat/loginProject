@@ -4,7 +4,9 @@
     <root id="1"/>
     <schema id="2" parent="1" name="ALI">
       <ObjectId>48</ObjectId>
-      <IntrospectionTimestamp>2018-04-20.05:23:04</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2018-04-22.01:35:12</IntrospectionTimestamp>
+      <CreatedTimestamp>2018-04-22.01:35:04</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-22.01:35:04</ModifiedTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -59,5 +61,98 @@
     <schema id="19" parent="1" name="XS$NULL">
       <ObjectId>2147483638</ObjectId>
     </schema>
+    <sequence id="20" parent="2" name="HIBERNATE_SEQUENCE">
+      <ObjectId>22621</ObjectId>
+      <CreatedTimestamp>2018-04-22.01:35:04</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-22.01:35:04</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <table id="21" parent="2" name="GROUPPERSON">
+      <ObjectId>22622</ObjectId>
+      <CreatedTimestamp>2018-04-22.01:35:04</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-22.01:35:04</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="22" parent="2" name="PERSONAL">
+      <ObjectId>22624</ObjectId>
+      <CreatedTimestamp>2018-04-22.01:35:04</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-22.01:35:04</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <column id="23" parent="21" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="21" name="NAME">
+      <Position>2</Position>
+      <DataType>VARCHAR2(255 char)|0us</DataType>
+    </column>
+    <index id="25" parent="21" name="SYS_C007653">
+      <ObjectId>22623</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-04-22.01:35:04</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-22.01:35:04</ModifiedTimestamp>
+      <TablespaceName>SYSTEM</TablespaceName>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="26" parent="21" name="SYS_C007653">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-04-22.01:35:04</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C007653</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="27" parent="22" name="USERNAME">
+      <Position>1</Position>
+      <DataType>VARCHAR2(255 char)|0us</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="22" name="ID">
+      <Position>2</Position>
+      <DataType>NUMBER(10 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="22" name="FAMILY">
+      <Position>3</Position>
+      <DataType>VARCHAR2(255 char)|0us</DataType>
+    </column>
+    <column id="30" parent="22" name="NAME">
+      <Position>4</Position>
+      <DataType>VARCHAR2(255 char)|0us</DataType>
+    </column>
+    <column id="31" parent="22" name="PASSWORD">
+      <Position>5</Position>
+      <DataType>VARCHAR2(255 char)|0us</DataType>
+    </column>
+    <index id="32" parent="22" name="SYS_C007656">
+      <ObjectId>22625</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-04-22.01:35:04</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-22.01:35:04</ModifiedTimestamp>
+      <TablespaceName>SYSTEM</TablespaceName>
+      <ColNames>USERNAME
+ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="33" parent="22" name="SYS_C007656">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-04-22.01:35:04</ModifiedTimestamp>
+      <ColNames>USERNAME
+ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C007656</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="34" parent="22" name="FK82OM9F01RTNJ8QDDUBHRBN4UD">
+      <ModifiedTimestamp>2018-04-22.01:35:04</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <RefSchemaName>ALI</RefSchemaName>
+      <RefTableName>GROUPPERSON</RefTableName>
+      <RefKeyName>SYS_C007653</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
   </database-model>
 </dataSource>

@@ -14,6 +14,6 @@ import javax.persistence.MappedSuperclass;
 public class BaseEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE , generator = "default_Gen")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE )
     private Integer Id;
 }
