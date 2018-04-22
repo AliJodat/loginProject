@@ -9,6 +9,6 @@ import org.loginProject.repository.generic.IGenericRepository;
  */
 public interface IPersonalRepo extends IGenericRepository<Personal> {
 
-    Personal findByPersonalCode (String PersonalUsername);
 
+    boolean findPersonalByUsername(String username, String password);
 }

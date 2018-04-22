@@ -17,7 +17,7 @@
 
 <html>
 <head>
-    <%@ include file="../../Scripts/includes.jsp" %>
+    <%@ include file="/Scripts/includes.jsp" %>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,7 +27,7 @@
 
     <%--<jsp:include page="../../Scripts/includes.jsp"></jsp:include>--%>
 
-    <link rel="stylesheet" href="../../Scripts/LoginScripts/custom.css">
+    <link rel="stylesheet" href="/Scripts/LoginScripts/custom.css">
     <script type="text/javascript" language="JavaScript" >
 
     </script>

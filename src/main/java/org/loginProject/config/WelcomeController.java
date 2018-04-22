@@ -15,12 +15,12 @@ public class WelcomeController {
 
     @RequestMapping("/")
     public String LoginIndex() {
-        return "Login/LoginIndex";
+        return "/Login/LoginIndex";
     }
 
     @RequestMapping("/login")
     public String Login() {
-        return "redirect:Login/Login";
+        return "redirect:/Login/Login";
     }
 
 

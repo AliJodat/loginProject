@@ -16,7 +16,7 @@
 
 <html>
 <head>
-    <%@ include file="../../Scripts/includes.jsp" %>
+    <%@ include file="/Scripts/includes.jsp" %>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,12 +26,9 @@
 
     <%--<jsp:include page="../../Scripts/includes.jsp"></jsp:include>--%>
 
-    <link rel="stylesheet" href="../../Scripts/LoginScripts/custom.css">
+    <link rel="stylesheet" href="/Scripts/LoginScripts/custom.css">
     <script type="text/javascript" language="JavaScript" >
 
-        function redirect() {
-
-        }
 
     </script>
 </head>
@@ -39,14 +36,15 @@
 <div class="container">
     <div class="row">
         <div class="login-form col-sm-4">
-            <form action="" method="post">
+            <form id="submitForm" action="/getUserName/findPersonalByUsername" method="post">
                 <h2 class="text-center"> مشخصات</h2>
                 <div class="form-group">
-                    <input type="text" class="form-control rtl" placeholder="نام کاربری" required="required">
+                    <input name="username" type="text" class="form-control rtl" placeholder="نام کاربری" required="required">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control rtl" placeholder="کلمه عبور" required="required">
+                    <input name="password" type="password" class="form-control rtl" placeholder="نام کاربری" required="required">
                 </div>
+
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block">ورود</button>
                 </div>
@@ -60,5 +58,7 @@
 
     </div>
 </div>
+<script type="text/javascript" src="=/Scripts/jquery/jquery-3.3.1.min.js"></script>
+
 </body>
 </html>

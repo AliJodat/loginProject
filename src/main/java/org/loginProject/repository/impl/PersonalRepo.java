@@ -1,10 +1,8 @@
 package org.loginProject.repository.impl;
 
-import org.hibernate.SessionFactory;
 import org.loginProject.model.Personal;
 import org.loginProject.repository.IPersonalRepo;
 import org.loginProject.repository.generic.GenericRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,14 +24,23 @@ public class PersonalRepo  extends GenericRepository<Personal> implements IPerso
         return Personal.class;
     }
 
-
-
     @PersistenceContext
     private EntityManager entityManager;
 
-    public Personal findByPersonalCode (String PersonalUsername){
-        String hql = (" from "+getDomainClass().getName()+ " e where e.username='"+PersonalUsername+"'");
+    @Override
+    public boolean findPersonalByUsername(String username, String password){
+        String hql = (" from "+getDomainClass().getName()+ " e where e.username= :username ");
+        if(!password.isEmpty()) {
+            hql += (" and e.password= :password ");
+        }
         Query query = entityManager.createQuery(hql);
-        return (Personal) query.getSingleResult();
+        query.setParameter("username",username);
+        query.setParameter("password",password);
+
+        String confernPassword=query.getSingleResult().toString();
+        if(confernPassword.isEmpty())
+            return false;
+        return true;
     }
+
 }

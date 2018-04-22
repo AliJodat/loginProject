@@ -11,7 +11,7 @@ import java.io.Serializable;
  */
 
 @Entity
-@SequenceGenerator(sequenceName = "Group_Person_Seq", name = "groupPersonSeq", allocationSize = 1)
+@Table(name = "GROUP_PERSON")
 public class GroupPerson extends BaseEntity implements Serializable {
 
     @Column

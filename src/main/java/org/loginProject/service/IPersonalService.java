@@ -5,4 +5,6 @@ package org.loginProject.service;
  * Create on 4/19/2018 11:06 AM
  */
 public interface IPersonalService {
+
+    boolean findPersonalByUsername(String username, String password);
 }
