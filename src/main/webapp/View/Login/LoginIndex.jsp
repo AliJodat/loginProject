@@ -8,26 +8,51 @@
 <!DOCTYPE html>
 
 
-<%@ page pageEncoding="UTF-8" language="java" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
-<%@ taglib prefix="th" uri="http://www.springframework.org/tags/form" %>
 
 <html>
 <head>
-    <%@ include file="/Scripts/includes.jsp" %>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <jsp:include page="/Scripts/includes.jsp"></jsp:include>
     <title>Login Form</title>
-
 
     <%--<jsp:include page="../../Scripts/includes.jsp"></jsp:include>--%>
 
-    <link rel="stylesheet" href="/Scripts/LoginScripts/custom.css">
     <script type="text/javascript" language="JavaScript" >
+    $(document).ready(function() {
+
+
+
+    });
+    function saveStudentAJAX() {
+        var sendJson = {
+            username: $("#txtUsername").val(),
+            password: $("#txtPassword").val()
+        };
+        console.log(JSON.stringify(sendJson));
+        $.ajax({
+            type: "POST",
+            contentType: "application/json; charset=utf-8",
+            url: '<c:url value="/getUserName/findPersonalByUsername"/>',
+            data: JSON.stringify(sendJson),
+            dataType: "json",
+            success: function (res) {
+                alert("OK");
+            }, error: function () {
+                alert("NOT OK !!!!!!!!!");
+
+            }
+
+        });
+
+    }
 
 
     </script>
@@ -36,29 +61,22 @@
 <div class="container">
     <div class="row">
         <div class="login-form col-sm-4">
-            <form id="submitForm" action="/getUserName/findPersonalByUsername" method="post">
+            <form id="submitForm" enctype="application/json">
                 <h2 class="text-center"> مشخصات</h2>
-                <div class="form-group">
-                    <input name="username" type="text" class="form-control rtl" placeholder="نام کاربری" required="required">
-                </div>
-                <div class="form-group">
-                    <input name="password" type="password" class="form-control rtl" placeholder="نام کاربری" required="required">
-                </div>
+                <input id="txtUsername" type="text" class="form-control rtl mt-2" placeholder="نام کاربری" required="required">
+                <input id="txtPassword" type="password" class="form-control rtl mt-2" placeholder="رمز عبور" required="required">
+                <button id="enterButt" type="button" class="btn btn-primary btn-block mt-2" onclick="saveStudentAJAX()">ورود</button>
 
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block">ورود</button>
-                </div>
                 <%--<div class="clearfix">
                     <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
                     <a href="#" class="pull-right">Forgot Password?</a>
                 </div>--%>
             </form>
-            <p class="text-center"><a href="/login" >ساخت حساب کاربری جدید</a></p>
+            <p class="text-center"><a href="/login">ساخت حساب کاربری جدید</a></p>
         </div>
 
     </div>
 </div>
-<script type="text/javascript" src="=/Scripts/jquery/jquery-3.3.1.min.js"></script>
 
 </body>
 </html>

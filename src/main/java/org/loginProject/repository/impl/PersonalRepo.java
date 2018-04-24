@@ -29,7 +29,11 @@ public class PersonalRepo  extends GenericRepository<Personal> implements IPerso
 
     @Override
     public boolean findPersonalByUsername(String username, String password){
-        String hql = (" from "+getDomainClass().getName()+ " e where e.username= :username ");
+        String hql = (" from "+getDomainClass().getName()+ " e where 1=1 ");
+
+        if(!username.isEmpty()) {
+            hql += (" and e.username= :username ");
+        }
         if(!password.isEmpty()) {
             hql += (" and e.password= :password ");
         }
@@ -38,9 +42,11 @@ public class PersonalRepo  extends GenericRepository<Personal> implements IPerso
         query.setParameter("password",password);
 
         String confernPassword=query.getSingleResult().toString();
-        if(confernPassword.isEmpty())
+        if(confernPassword.isEmpty()){
+
             return false;
-        return true;
+        }else{
+        return true;}
     }
 
 }

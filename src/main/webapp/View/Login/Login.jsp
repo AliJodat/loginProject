@@ -9,24 +9,22 @@
 
 
 <%@ page pageEncoding="UTF-8" language="java" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
-<%@ taglib prefix="th" uri="http://www.springframework.org/tags/form" %>
 
 <html>
 <head>
-    <%@ include file="/Scripts/includes.jsp" %>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login Form</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<jsp:include page="/Scripts/includes.jsp"></jsp:include>
+<title>Login Form</title>
 
 
     <%--<jsp:include page="../../Scripts/includes.jsp"></jsp:include>--%>
 
-    <link rel="stylesheet" href="/Scripts/LoginScripts/custom.css">
 
     <script type="text/javascript" language="JavaScript" >
 
