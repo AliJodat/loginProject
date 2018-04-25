@@ -28,18 +28,18 @@ public class PersonalRepo  extends GenericRepository<Personal> implements IPerso
     private EntityManager entityManager;
 
     @Override
-    public boolean findPersonalByUsername(String username, String password){
+    public boolean findPersonalByUsername(Personal personal){
         String hql = (" from "+getDomainClass().getName()+ " e where 1=1 ");
 
-        if(!username.isEmpty()) {
+        if(!personal.getUsername().isEmpty()) {
             hql += (" and e.username= :username ");
         }
-        if(!password.isEmpty()) {
+        if(!personal.getPassword().isEmpty()) {
             hql += (" and e.password= :password ");
         }
         Query query = entityManager.createQuery(hql);
-        query.setParameter("username",username);
-        query.setParameter("password",password);
+        query.setParameter("username",personal.getUsername());
+        query.setParameter("password",personal.getPassword());
 
         String confernPassword=query.getSingleResult().toString();
         if(confernPassword.isEmpty()){

@@ -1,5 +1,6 @@
 package org.loginProject.web.controller;
 
+import org.loginProject.model.Personal;
 import org.loginProject.service.IPersonalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,8 @@ public class PersonalController {
     private IPersonalService iPersonalService;
 
     @PostMapping(value = "/findPersonalByUsername")
-    public boolean findPersonalByUsername(@RequestBody String username, String password){
-        return iPersonalService.findPersonalByUsername(username,password);
+    public boolean findPersonalByUsername(@RequestBody Personal personal){
+        return iPersonalService.findPersonalByUsername(personal);
     }
+
 }

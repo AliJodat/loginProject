@@ -1,5 +1,6 @@
 package org.loginProject.service.impl;
 
+import org.loginProject.model.Personal;
 import org.loginProject.repository.IPersonalRepo;
 import org.loginProject.service.IPersonalService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,8 @@ public class PersonalService implements IPersonalService {
     private IPersonalRepo iPersonalRepo;
 
     @Override
-    public boolean findPersonalByUsername(String username, String password){
+    public boolean findPersonalByUsername(Personal personal){
 
-        return  iPersonalRepo.findPersonalByUsername(username,password);
+        return  iPersonalRepo.findPersonalByUsername(personal);
     }
 }

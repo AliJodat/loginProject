@@ -20,7 +20,12 @@ public class WelcomeController {
 
     @RequestMapping("/login")
     public String Login() {
-        return "redirect:/Login/Login";
+        return "/Login/Login";
+    }
+
+    @RequestMapping("/index")
+    public String Index() {
+        return "/index";
     }
 
 

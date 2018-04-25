@@ -28,6 +28,12 @@
 
     <script type="text/javascript" language="JavaScript">
 
+        $(document).ready(function () {
+
+            $.getJSON('<c:url value="/index" />', function (indexEnter) {
+                //$('#trTemplate').tmpl(indexEnter).appendTo('#reportGrid');
+            });
+        });
 
     </script>
 </head>

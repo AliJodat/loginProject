@@ -16,18 +16,13 @@
 
 <html>
 <head>
-
-
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <jsp:include page="/Scripts/includes.jsp"></jsp:include>
     <title>Login Form</title>
 
-    <%--<jsp:include page="../../Scripts/includes.jsp"></jsp:include>--%>
-
     <script type="text/javascript" language="JavaScript" >
     $(document).ready(function() {
-
 
 
     });
@@ -44,14 +39,13 @@
             data: JSON.stringify(sendJson),
             dataType: "json",
             success: function (res) {
-                alert("OK");
-            }, error: function () {
-                alert("NOT OK !!!!!!!!!");
-
+                window.location.assign("/index");
             }
-
         });
-
+    }
+    
+    function changeToSetup() {
+        window.location.assign("/login")
     }
 
 
@@ -72,7 +66,7 @@
                     <a href="#" class="pull-right">Forgot Password?</a>
                 </div>--%>
             </form>
-            <p class="text-center"><a href="/login">ساخت حساب کاربری جدید</a></p>
+            <button id="btnChangeToSetup" type="button" class="btn btn-info btn-block mt-2" onclick="changeToSetup()">ساخت حساب کاربری جدید</button>
         </div>
 
     </div>

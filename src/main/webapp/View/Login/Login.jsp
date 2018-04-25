@@ -23,10 +23,12 @@
 <title>Login Form</title>
 
 
-    <%--<jsp:include page="../../Scripts/includes.jsp"></jsp:include>--%>
-
-
     <script type="text/javascript" language="JavaScript" >
+        $(document).ready(function () {
+            $.getJSON('<c:url value="/Login/Login" />', function (indexEnter) {
+                //$('#trTemplate').tmpl(indexEnter).appendTo('#reportGrid');
+            });
+        });
 
     </script>
 
