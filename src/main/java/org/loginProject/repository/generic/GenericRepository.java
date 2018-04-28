@@ -1,11 +1,13 @@
 package org.loginProject.repository.generic;
 
+import org.loginProject.model.generic.BaseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -14,7 +16,7 @@ import java.util.List;
  */
 
 @Repository
-public abstract class  GenericRepository<T> implements  IGenericRepository<T>{
+public abstract class  GenericRepository<T extends BaseEntity> implements  IGenericRepository<T>{
     protected Class<T> domainClass = getDomainClass();
     protected abstract Class<T> getDomainClass();
 
@@ -26,26 +28,30 @@ public abstract class  GenericRepository<T> implements  IGenericRepository<T>{
         return entityManager.createQuery("from " + domainClass.getName() + " e where e.deleted = false").getResultList();
     }
 
-    @Transactional
+
     @Override
-    public void add (T entity){
+    public T loadById(Long id){
+        return entityManager.find(domainClass,id);
+    }
+
+
+    @Override
+    public void add(T entity){
         entityManager.persist(entity);
     }
 
-    @Transactional
+    @Override
     public void delete (T entity){
         entityManager.remove(entityManager.merge(entity));
     }
 
     @Override
-    @Transactional
-    public void deleteEntityById(int entityId){
-        Object obj = entityManager.find(domainClass, entityId);
+    public void deleteEntityById(Long id){
+        Object obj = entityManager.find(domainClass, id);
         entityManager.remove(obj);
     }
 
     @Override
-    @Transactional
     public void update (T entity){
         entityManager.merge(entity);
     }

@@ -4,6 +4,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import java.io.Serializable;
 
 /**
  * @author Ali
@@ -11,9 +12,17 @@ import javax.persistence.MappedSuperclass;
  */
 
 @MappedSuperclass
-public class BaseEntity {
+public class BaseEntity<PK extends Serializable> implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
-    private Integer Id;
+    private PK Id;
+
+    public PK getId() {
+        return Id;
+    }
+
+    public void setId(PK id) {
+        Id = id;
+    }
 }

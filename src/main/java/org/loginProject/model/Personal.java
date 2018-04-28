@@ -12,7 +12,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "PERSONAL")
-public class Personal extends BaseEntity implements Serializable {
+public class Personal extends BaseEntity<Long> implements Serializable {
 
     @Column
     private String name;
@@ -27,6 +27,9 @@ public class Personal extends BaseEntity implements Serializable {
 
     @Column
     private String role;
+
+    @Column(unique = true)
+    private Integer code;
 
     @ManyToOne
     @JoinColumn(name = "id")
@@ -78,5 +81,13 @@ public class Personal extends BaseEntity implements Serializable {
 
     public void setGroupPerson(org.loginProject.model.GroupPerson groupPerson) {
         GroupPerson = groupPerson;
+    }
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
     }
 }

@@ -16,7 +16,7 @@ import javax.persistence.Query;
  */
 
 @Repository
-@Transactional
+
 public class PersonalRepo  extends GenericRepository<Personal> implements IPersonalRepo {
 
     @Override
@@ -29,13 +29,13 @@ public class PersonalRepo  extends GenericRepository<Personal> implements IPerso
 
     @Override
     public boolean findPersonalByUsername(Personal personal){
-        String hql = (" from "+getDomainClass().getName()+ " e where 1=1 ");
+        String hql = " from "+getDomainClass().getName()+ " e where 1=1 ";
 
         if(!personal.getUsername().isEmpty()) {
-            hql += (" and e.username= :username ");
+            hql += " and e.username= :username ";
         }
         if(!personal.getPassword().isEmpty()) {
-            hql += (" and e.password= :password ");
+            hql += " and e.password= :password ";
         }
         Query query = entityManager.createQuery(hql);
         query.setParameter("username",personal.getUsername());
@@ -48,5 +48,6 @@ public class PersonalRepo  extends GenericRepository<Personal> implements IPerso
         }else{
         return true;}
     }
+
 
 }

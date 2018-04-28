@@ -4,6 +4,7 @@ import org.loginProject.repository.generic.IGenericRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -12,7 +13,6 @@ import java.util.List;
  */
 
 @Service
-@Transactional
 public abstract class GenericService<T> implements IGenericService<T> {
 
     protected abstract IGenericRepository<T> getGenericRepo();
@@ -22,8 +22,9 @@ public abstract class GenericService<T> implements IGenericService<T> {
         return getGenericRepo().getAll();
     }
 
+
     @Override
-    public void add(T entity) {
+    public void save(T entity) {
         getGenericRepo().add(entity);
     }
 
@@ -33,8 +34,8 @@ public abstract class GenericService<T> implements IGenericService<T> {
     }
 
     @Override
-    public void deleteEntityById(int entityId) {
-        getGenericRepo().deleteEntityById(entityId);
+    public void deleteEntityById(Long id) {
+        getGenericRepo().deleteEntityById(id);
     }
 
     @Override
@@ -46,4 +47,9 @@ public abstract class GenericService<T> implements IGenericService<T> {
     public int count() {
         return getGenericRepo().count();
     }
+
+    public T loadById(Long id) {
+        return getGenericRepo().loadById(id);
+    }
 }
+

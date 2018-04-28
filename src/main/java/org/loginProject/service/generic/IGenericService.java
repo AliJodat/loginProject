@@ -9,9 +9,13 @@ import java.util.List;
 public interface IGenericService<T> {
 
     List<T> getAll();
-    void add(T entity);
+
+    void save(T entity);
+
     void delete (T entity);
-    void deleteEntityById(int entityId);
+
+    void deleteEntityById(Long entityId);
+
     void update (T entity);
     int count ();
 }

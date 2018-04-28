@@ -12,7 +12,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "GROUP_PERSON")
-public class GroupPerson extends BaseEntity implements Serializable {
+public class GroupPerson extends BaseEntity<Long> implements Serializable {
 
     @Column
     private String name;

@@ -10,5 +10,6 @@ import org.loginProject.repository.generic.IGenericRepository;
 public interface IPersonalRepo extends IGenericRepository<Personal> {
 
 
-    boolean findPersonalByUsername(Personal personal);
+    boolean findPersonalByUsername(Personal entity);
+
 }

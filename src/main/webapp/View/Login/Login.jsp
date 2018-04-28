@@ -30,30 +30,52 @@
             });
         });
 
+        function saveNewUserAJAX() {
+            var sendJson = {
+                id: -1,
+                code: $("#numCode").val(),
+                name: $("#txtName").val(),
+                family: $("#txtFamily").val(),
+                username: $("#txtUsername").val(),
+                password: $("#txtPassword").val()
+            };
+            console.log(JSON.stringify(sendJson));
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: '<c:url value="/getUserName/saveNewUser"/>',
+                data: JSON.stringify(sendJson),
+                dataType: "json",
+                success: function (res) {
+                    window.location.assign("/");
+                }
+            });
+        }
+
     </script>
 
 </head>
 <body >
 <div class="login-form">
-    <form action="/examples/actions/confirmation" method="post">
+    <form id="submitForm" enctype="application/json">
         <h2 class="text-center">وارد کردن اطلاعات</h2>
         <div class="form-group">
-            <input type="text" class="form-control" dir="rtl" placeholder="کد ملی" required="required">
+            <input id="numCode" type="text" class="form-control" required="required" dir="rtl" placeholder="کد ملی" required="required">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" dir="rtl" placeholder="نام" required="required">
+            <input id="txtName" type="text" class="form-control" required="required" dir="rtl" placeholder="نام" required="required">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" dir="rtl" placeholder="نام خانوادگی" required="required">
+            <input id="txtFamily" type="text" class="form-control" required="required" dir="rtl" placeholder="نام خانوادگی" required="required">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" dir="rtl" placeholder="نام کاربری" required="required">
+            <input id="txtUsername" type="text" class="form-control" required="required" dir="rtl" placeholder="نام کاربری" required="required">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" dir="rtl" placeholder="کلمه عبور" required="required">
+            <input id="txtPassword" type="password" class="form-control" required="required" dir="rtl" placeholder="کلمه عبور" required="required">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Log in</button>
+            <button id="btnSubmit"type="button" class="btn btn-primary btn-block" onclick="saveNewUserAJAX()">ساخت کاربر</button>
         </div>
 
     </form>

@@ -17,9 +17,11 @@ public class PersonalController {
     @Autowired
     private IPersonalService iPersonalService;
 
-    @PostMapping(value = "/findPersonalByUsername")
-    public boolean findPersonalByUsername(@RequestBody Personal personal){
-        return iPersonalService.findPersonalByUsername(personal);
+
+    @PostMapping("/saveNewUser")
+    public Boolean saveNewUser (@RequestBody Personal personal){
+        iPersonalService.save(personal);
+        return true;
     }
 
 }

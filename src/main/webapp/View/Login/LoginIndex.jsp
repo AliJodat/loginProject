@@ -40,6 +40,8 @@
             dataType: "json",
             success: function (res) {
                 window.location.assign("/index");
+            },else:function (e) {
+                alert("نام کاربری و یا رمز وارد شده صحیح نمی باشد !");
             }
         });
     }
