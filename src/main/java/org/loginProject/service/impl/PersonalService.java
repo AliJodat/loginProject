@@ -28,7 +28,7 @@ public class PersonalService extends GenericService<Personal> implements IPerson
     @Override
     @Transactional
     public void save(Personal entity) {
-        System.out.println(entity.getId());
+
         if(entity.getId() == null || entity.getId() > -1){
             Personal personal = super.loadById(entity.getId());
             entity.setCode(entity.getCode());

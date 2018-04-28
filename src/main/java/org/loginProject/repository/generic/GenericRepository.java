@@ -4,10 +4,8 @@ import org.loginProject.model.generic.BaseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -16,6 +14,7 @@ import java.util.List;
  */
 
 @Repository
+@Transactional
 public abstract class  GenericRepository<T extends BaseEntity> implements  IGenericRepository<T>{
     protected Class<T> domainClass = getDomainClass();
     protected abstract Class<T> getDomainClass();
@@ -37,7 +36,7 @@ public abstract class  GenericRepository<T extends BaseEntity> implements  IGene
 
     @Override
     public void add(T entity){
-        entityManager.persist(entity);
+        entityManager.merge(entity);
     }
 
     @Override
