@@ -17,7 +17,6 @@ public class PersonalController {
     @Autowired
     private IPersonalService iPersonalService;
 
-
     @PostMapping("/saveNewUser")
     public Boolean saveNewUser (@RequestBody Personal personal){
         iPersonalService.save(personal);

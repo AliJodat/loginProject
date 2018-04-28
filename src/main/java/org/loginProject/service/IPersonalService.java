@@ -12,7 +12,5 @@ import org.springframework.transaction.annotation.Transactional;
 
 public interface IPersonalService extends IGenericService<Personal> {
 
-    boolean findPersonalByUsername(Personal personal);
-
     void save (Personal entity);
 }
