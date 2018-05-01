@@ -8,5 +8,5 @@ import org.loginProject.repository.generic.IGenericRepository;
  * Create on 4/19/2018 11:16 AM
  */
 public interface IGroupPersonRepo extends IGenericRepository<Personal >{
-    Personal findByPersonalCode (String PersonalUsername);
+
 }

@@ -28,5 +28,10 @@ public class WelcomeController {
         return "/index";
     }
 
+    @RequestMapping("/Insert_Group_personal")
+    public String Insert_Group_personal() {
+        return "/Login/Insert_Group_personal";
+    }
+
 
 }

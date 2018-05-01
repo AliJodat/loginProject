@@ -24,5 +24,13 @@ public class GroupPerson extends BaseEntity<Long> implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+
     }
+/*    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }*/
 }
