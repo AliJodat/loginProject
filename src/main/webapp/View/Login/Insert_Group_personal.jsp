@@ -1,16 +1,11 @@
 --%>
 <!DOCTYPE html>
-
-
 <%@ page pageEncoding="UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
-
 <html>
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <jsp:include page="/Scripts/includes.jsp"></jsp:include>
@@ -49,10 +44,9 @@
             <input id="txtName" type="text" class="form-control" required="required" dir="rtl" placeholder="نام گروه" required="required">
         </div>
         <div class="form-group">
-            <button id="btnSubmit"type="button" class="btn btn-primary btn-block" onclick="saveNewGroupUserAJAX()">ساخت گروه</button>
+            <button id="btnSubmit" type="button" class="btn btn-primary btn-block" onclick="saveNewGroupUserAJAX()">ساخت گروه</button>
         </div>
     </form>
 </div>
 </body>
-
 </html>

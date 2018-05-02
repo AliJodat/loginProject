@@ -13,4 +13,9 @@ public class PersonalController {
         iPersonalService.save(personal);
         return true;
     }
+    @PostMapping("/findPersonalByUsername")
+    public Boolean findPersonalByUsername (@RequestBody Personal personal){
+        iPersonalService.findPersonalByUsername(personal);
+        return true;
+    }
 }

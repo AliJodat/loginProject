@@ -5,10 +5,7 @@ import org.loginProject.model.generic.BaseEntity;
 import javax.persistence.*;
 import java.io.Serializable;
 
-/**
- * @author Ali
- * Create on 4/18/2018 10:51 PM
- */
+
 
 @Entity
 @Table(name = "GROUP_PERSON")

@@ -7,11 +7,6 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-/**
- * @author Ali
- * Create on 4/21/2018 8:41 PM
- */
-
 
 @SpringBootApplication
 @EnableAutoConfiguration

@@ -1,11 +1,8 @@
 package org.loginProject.service.generic;
 
-import java.util.List;
+import org.loginProject.model.Personal;
 
-/**
- * @author Ali
- * Create on 4/20/2018 2:39 AM
- */
+import java.util.List;
 public interface IGenericService<T> {
 
     List<T> getAll();
@@ -15,7 +12,7 @@ public interface IGenericService<T> {
     void delete (T entity);
 
     void deleteEntityById(Long entityId);
-
+    void findPersonalByUsername (T entity);
     void update (T entity);
     int count ();
 }

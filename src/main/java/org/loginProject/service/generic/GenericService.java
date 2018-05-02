@@ -7,10 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * @author Ali
- * Create on 4/20/2018 2:39 AM
- */
+
 
 @Service
 public abstract class GenericService<T> implements IGenericService<T> {
@@ -26,6 +23,11 @@ public abstract class GenericService<T> implements IGenericService<T> {
     @Override
     public void save(T entity) {
         getGenericRepo().add(entity);
+    }
+
+    @Override
+    public void findPersonalByUsername(T entity) {
+
     }
 
     @Override

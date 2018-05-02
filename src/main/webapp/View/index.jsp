@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Ali
-  Date: 4/22/2018
-  Time: 8:33 PM
-  To change this template use File | Settings | File Templates.
---%>
+
 <!DOCTYPE html>
 
 
