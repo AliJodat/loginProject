@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/getUserName")
-public class PersonalController {
+public class PersonalController  {
     @Autowired
     private IPersonalService iPersonalService;
     @PostMapping("/saveNewUser")
