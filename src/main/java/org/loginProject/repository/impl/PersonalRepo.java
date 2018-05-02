@@ -7,6 +7,8 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import java.util.List;
+
 @Repository
 @Transactional
 public class PersonalRepo  extends GenericRepository<Personal> implements IPersonalRepo {
@@ -14,6 +16,11 @@ public class PersonalRepo  extends GenericRepository<Personal> implements IPerso
     @Override
     protected Class<Personal> getDomainClass() {
         return Personal.class;
+    }
+
+    @Override
+    public List<Personal> getAll() {
+        return super.getAll();
     }
 
     @PersistenceContext

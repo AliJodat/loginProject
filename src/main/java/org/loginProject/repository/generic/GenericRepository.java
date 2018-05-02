@@ -14,7 +14,7 @@ public abstract class  GenericRepository<T extends BaseEntity> implements  IGene
     private EntityManager entityManager;
     @Override
     public List<T> getAll() {
-        return entityManager.createQuery("from " + domainClass.getName() + " e where e.deleted = false").getResultList();
+        return entityManager.createQuery("from " + domainClass.getName() + " e where 1 = 1").getResultList();
     }
     @Override
     public T loadById(Long id){

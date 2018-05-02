@@ -8,6 +8,9 @@ import org.loginProject.service.generic.GenericService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
 @Service
 public class PersonalService extends GenericService<Personal> implements IPersonalService {
     @Autowired
@@ -37,4 +40,9 @@ public class PersonalService extends GenericService<Personal> implements IPerson
         PersonalRepo personalRepo=new PersonalRepo();
         personalRepo.findPersonalByUsername(entity);
         }
+
+    @Override
+    public List getAll() {
+        return super.getAll();
+    }
 }
