@@ -19,12 +19,13 @@ public class PersonalController  {
     @PostMapping("/findPersonalByUsername")
     public Boolean findPersonalByUsername (@RequestBody Personal personal){
         iPersonalService.findPersonalByUsername(personal);
-
         return true;
     }
     @GetMapping("/getPersonAll")
-    public List getPersonAll (){
-       return iPersonalService.getAll();
-
+    public List<Personal> getPersonAll (){
+       /* HttpServletRequest request = null;
+        request.setAttribute("list",iPersonalService.getAll());
+        return "index";*/
+        return iPersonalService.getAll();
     }
 }
