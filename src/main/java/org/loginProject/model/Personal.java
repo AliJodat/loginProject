@@ -4,9 +4,10 @@ import org.loginProject.model.generic.BaseEntity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 
-@Entity
+@Entity(name = "personal")
 @Table(name = "PERSONAL")
 public class Personal extends BaseEntity<Long> implements Serializable {
 
@@ -22,14 +23,14 @@ public class Personal extends BaseEntity<Long> implements Serializable {
     private String password;
 
     @Column
-    private String role;
+    private Integer roleId;
 
     @Column(unique = true)
     private Integer code;
 
-    @ManyToOne
-    @JoinColumn(name = "id")
-    private GroupPerson GroupPerson;
+    @OneToMany(mappedBy = "personal")
+    private Set<GroupPerson> groupPersonSet;
+
 
     public String getName() {
         return name;
@@ -63,20 +64,12 @@ public class Personal extends BaseEntity<Long> implements Serializable {
         this.password = password;
     }
 
-    public String getRole() {
-        return role;
+    public Integer getRoleId() {
+        return roleId;
     }
 
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public org.loginProject.model.GroupPerson getGroupPerson() {
-        return GroupPerson;
-    }
-
-    public void setGroupPerson(org.loginProject.model.GroupPerson groupPerson) {
-        GroupPerson = groupPerson;
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 
     public Integer getCode() {
@@ -85,5 +78,13 @@ public class Personal extends BaseEntity<Long> implements Serializable {
 
     public void setCode(Integer code) {
         this.code = code;
+    }
+
+    public Set<GroupPerson> getGroupPersonSet() {
+        return groupPersonSet;
+    }
+
+    public void setGroupPersonSet(Set<GroupPerson> groupPersonSet) {
+        this.groupPersonSet = groupPersonSet;
     }
 }

@@ -22,8 +22,7 @@ public class GroupPersonService extends GenericService<GroupPerson> implements I
     public void save(GroupPerson entity) {
         if(entity.getId() == null || entity.getId() > -1){
             GroupPerson groupPerson = super.loadById(entity.getId());
-           // entity.setCode(entity.getCode());
-            entity.setName(entity.getName());
+            groupPerson.setUserRole(entity.getUserRole());
             super.update(groupPerson);
         }else {
             super.save(entity);

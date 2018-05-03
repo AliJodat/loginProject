@@ -25,10 +25,6 @@ public abstract class GenericService<T> implements IGenericService<T> {
         getGenericRepo().add(entity);
     }
 
-    @Override
-    public void findPersonalByUsername(T entity) {
-
-    }
 
     @Override
     public void delete(T entity) {

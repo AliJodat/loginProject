@@ -10,8 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/getInsert_Group_personal")
 public class GroupPersonController {
+
+
     @Autowired
     private IGroupPersonService iGroupPersonService;
+
+
     @PostMapping("/saveNewGroup")
     public Boolean saveNewGruop (@RequestBody GroupPerson groupPerson){
         iGroupPersonService.save(groupPerson);
