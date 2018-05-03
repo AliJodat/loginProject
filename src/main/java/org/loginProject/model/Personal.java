@@ -23,14 +23,13 @@ public class Personal extends BaseEntity<Long> implements Serializable {
     private String password;
 
     @Column
-    private Integer roleId;
+    private UserRole userRole;
 
     @Column(unique = true)
     private Integer code;
 
     @OneToMany(mappedBy = "personal")
     private Set<GroupPerson> groupPersonSet;
-
 
     public String getName() {
         return name;
@@ -64,12 +63,12 @@ public class Personal extends BaseEntity<Long> implements Serializable {
         this.password = password;
     }
 
-    public Integer getRoleId() {
-        return roleId;
+    public UserRole getUserRole() {
+        return userRole;
     }
 
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
+    public void setUserRole(UserRole userRole) {
+        this.userRole = userRole;
     }
 
     public Integer getCode() {

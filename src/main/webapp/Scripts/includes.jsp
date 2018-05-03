@@ -15,4 +15,4 @@
 <script src="<c:url value='/Scripts/jquery/jquery-3.3.1.js'/>"></script>
 <script src="<c:url value='/Scripts/jquery-tmpl/jquery.tmpl.js'/>"></script>
 <script src="<c:url value='/Scripts/bootstrap/js/bootstrap.js'/>"></script>
-<%--<link rel="stylesheet" href="<c:url value='/assets/bootstrap-rtl-master/dist/css/bootstrap-rtl.css'/>"/>--%>
+<link rel="stylesheet" href="<c:url value='/Scripts/jquery-tmpl/jquery.tmpl.js'/>"/>

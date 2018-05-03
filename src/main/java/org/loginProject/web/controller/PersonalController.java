@@ -4,6 +4,8 @@ import org.loginProject.service.IPersonalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/getUserName")
@@ -26,5 +28,10 @@ public class PersonalController  {
     public boolean findPersonalByUsername(@RequestBody Personal personal) {
         iPersonalService.findPersonalByUsername(personal);
         return true;
+    }
+
+    @GetMapping("/getAll")
+    public List<Personal> list (){
+        return iPersonalService.getAll();
     }
 }

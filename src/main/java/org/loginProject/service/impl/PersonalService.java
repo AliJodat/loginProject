@@ -1,6 +1,7 @@
 package org.loginProject.service.impl;
 import org.loginProject.model.GroupPerson;
 import org.loginProject.model.Personal;
+import org.loginProject.model.UserRole;
 import org.loginProject.repository.IPersonalRepo;
 import org.loginProject.repository.generic.IGenericRepository;
 import org.loginProject.repository.impl.PersonalRepo;
@@ -36,7 +37,7 @@ public class PersonalService extends GenericService<Personal> implements IPerson
             personal.setPassword(entity.getPassword());
             super.update(personal);
         }else {
-            entity.setRoleId(2);
+            entity.setUserRole(UserRole.USER);
             super.save(entity);
         }
 
