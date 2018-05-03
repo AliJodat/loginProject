@@ -20,16 +20,17 @@ public class Personal extends BaseEntity<Long> implements Serializable {
     private String username;
     @Column
     private String password;
-
+    /*
+    @ManyToOne*/
     @Column
     private String role;
 
     @Column(unique = true)
     private Integer code;
 
-    @ManyToOne
+ /*
     @JoinColumn(name = "id")
-    private GroupPerson GroupPerson;
+    private GroupPerson GroupPerson;*/
 
     public String getName() {
         return name;
@@ -70,14 +71,14 @@ public class Personal extends BaseEntity<Long> implements Serializable {
     public void setRole(String role) {
         this.role = role;
     }
-
+/*
     public org.loginProject.model.GroupPerson getGroupPerson() {
         return GroupPerson;
     }
 
     public void setGroupPerson(org.loginProject.model.GroupPerson groupPerson) {
         GroupPerson = groupPerson;
-    }
+    }*/
 
     public Integer getCode() {
         return code;

@@ -22,7 +22,7 @@ public class PersonalController  {
 
         return true;
     }
-    @PostMapping("/getPersonAll")
+    @GetMapping("/getPersonAll")
     public List getPersonAll (){
        return iPersonalService.getAll();
 
