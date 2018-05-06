@@ -6,26 +6,32 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/getUserName")
 public class PersonalController  {
+
+
+
     @Autowired
     private IPersonalService iPersonalService;
+
+
     @PostMapping("/saveNewUser")
     public Boolean saveNewUser (@RequestBody Personal personal){
         iPersonalService.save(personal);
         return true;
     }
+
+
     @PostMapping("/findPersonalByUsername")
-    public Boolean findPersonalByUsername (@RequestBody Personal personal){
+    public boolean findPersonalByUsername(@RequestBody Personal personal) {
         iPersonalService.findPersonalByUsername(personal);
         return true;
     }
-    @GetMapping("/getPersonAll")
-    public List<Personal> getPersonAll (){
-       /* HttpServletRequest request = null;
-        request.setAttribute("list",iPersonalService.getAll());
-        return "index";*/
+
+    @GetMapping("/getAll")
+    public List<Personal> list (){
         return iPersonalService.getAll();
     }
 }

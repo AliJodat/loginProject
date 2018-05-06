@@ -1,4 +1,3 @@
---%>
 <!DOCTYPE html>
 <%@ page pageEncoding="UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -11,16 +10,17 @@
     <jsp:include page="/Scripts/includes.jsp"></jsp:include>
     <title>Insert_Group_Persnal</title>
 </head>
-<script type="text/javascript" language="JavaScript" >
+<script type="text/javascript" language="JavaScript">
     $(document).ready(function () {
         $.getJSON('<c:url value="/Login/Insert_Group_personal" />', function (indexEnter) {
             //$('#trTemplate').tmpl(indexEnter).appendTo('#reportGrid');
         });
     });
+
     function saveNewGroupUserAJAX() {
         var sendJson = {
             id: -1,
-           /* code: $("#numCode").val(),*/
+            /* code: $("#numCode").val(),*/
             name: $("#txtName").val()
         };
         console.log(JSON.stringify(sendJson));
@@ -37,16 +37,26 @@
     }
 </script>
 <body>
-<div class="Insert_Group_persnal">
-    <form id="submitForm" enctype="application/json">
-        <h2 class="text-center">وارد کردن اطلاعات</h2>
-        <div class="form-group">
-            <input id="txtName" type="text" class="form-control" required="required" dir="rtl" placeholder="نام گروه" required="required">
+<div class="container">
+    <div class="row text-center">
+        <div class="col-sm-4">
+            <div class="Insert_Group_persnal">
+                <form id="submitForm" enctype="application/json">
+                    <h2 class="text-center">وارد کردن اطلاعات</h2>
+                    <div class="form-group">
+                        <input id="txtName" type="text" class="form-control" required="required" dir="rtl"
+                               placeholder="نام گروه" required="required"/>
+                    </div>
+                    <div class="form-group">
+                        <button id="btnSubmit" type="button" class="btn btn-primary btn-block"
+                                onclick="saveNewGroupUserAJAX()">ساخت گروه
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="form-group">
-            <button id="btnSubmit" type="button" class="btn btn-primary btn-block" onclick="saveNewGroupUserAJAX()">ساخت گروه</button>
-        </div>
-    </form>
+    </div>
 </div>
+
 </body>
 </html>

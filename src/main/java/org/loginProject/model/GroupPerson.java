@@ -4,30 +4,34 @@ import org.loginProject.model.generic.BaseEntity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 
-
-@Entity
+@Entity(name = "groupPerson")
 @Table(name = "GROUP_PERSON")
 public class GroupPerson extends BaseEntity<Long> implements Serializable {
 
     @Column
-    private String name;
+    private String userRole;
 
+    @ManyToOne
+    @JoinColumn(name = "roleId")
+    private Personal personal;
 
-    public String getName() {
-        return name;
+    public String getUserRole() {
+        return userRole;
     }
 
-    public void setName(String name) {
-        this.name = name;
-
-    }
-/*    public Integer getCode() {
-        return code;
+    public void setUserRole(String userRole) {
+        this.userRole = userRole;
     }
 
-    public void setCode(Integer code) {
-        this.code = code;
-    }*/
+    public Personal getPersonal() {
+        return personal;
+    }
+
+    public void setPersonal(Personal personal) {
+        this.personal = personal;
+    }
 }

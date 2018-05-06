@@ -7,7 +7,6 @@ public interface IGenericService<T> {
     void save(T entity);
     void delete (T entity);
     void deleteEntityById(Long entityId);
-    void findPersonalByUsername (T entity);
     void update (T entity);
     int count ();
 }

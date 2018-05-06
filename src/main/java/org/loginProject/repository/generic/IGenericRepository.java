@@ -17,6 +17,5 @@ public  interface IGenericRepository<T> {
 
     void delete (T entity);
     void deleteEntityById(Long id);
-    void findPersonalByUsername (T entity);
     int count ();
 }
