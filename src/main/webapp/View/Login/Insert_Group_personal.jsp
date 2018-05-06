@@ -20,8 +20,7 @@
     function saveNewGroupUserAJAX() {
         var sendJson = {
             id: -1,
-            /* code: $("#numCode").val(),*/
-            name: $("#txtName").val()
+            userRoleString: $("#txtName").val()
         };
         console.log(JSON.stringify(sendJson));
         $.ajax({
