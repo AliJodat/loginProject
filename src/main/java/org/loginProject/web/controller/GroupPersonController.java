@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/getInsert_Group_personal")
 public class GroupPersonController {
 
-
     @Autowired
     private IGroupPersonService iGroupPersonService;
 

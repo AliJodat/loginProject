@@ -13,18 +13,18 @@ import java.util.Set;
 public class GroupPerson extends BaseEntity<Long> implements Serializable {
 
     @Column
-    private String userRole;
+    private String userRoleString;
 
     @ManyToOne
-    @JoinColumn(name = "roleId")
     private Personal personal;
 
-    public String getUserRole() {
-        return userRole;
+
+    public void setUserRoleString(String userRoleString) {
+        this.userRoleString = userRoleString;
     }
 
-    public void setUserRole(String userRole) {
-        this.userRole = userRole;
+    public String getUserRoleString() {
+        return userRoleString;
     }
 
     public Personal getPersonal() {

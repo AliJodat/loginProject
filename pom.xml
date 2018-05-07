@@ -21,6 +21,7 @@
         <relativePath />
     </parent>
 
+
     <dependencies>
 
         <!--==========================Spring dependency========================================-->
@@ -134,6 +135,13 @@
 
 
     <build>
+        <resources>
+        <resource>
+            <directory>src/main/resources</directory>
+            <filtering>true</filtering>
+        </resource>
+        </resources>
+
         <plugins>
             <!-- Package as an executable jar/war -->
             <plugin>

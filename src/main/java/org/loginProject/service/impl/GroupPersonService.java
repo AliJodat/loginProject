@@ -9,23 +9,33 @@ import org.loginProject.service.generic.GenericService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+
 @Service
 public class GroupPersonService extends GenericService<GroupPerson> implements IGroupPersonService {
+
+
     @Autowired
     private IGroupPersonRepo iGroupPersonRepo;
+
+
     @Override
     protected IGenericRepository getGenericRepo() {
         return iGroupPersonRepo;
     }
+
+
+
     @Override
     @Transactional
     public void save(GroupPerson entity) {
         if(entity.getId() == null || entity.getId() > -1){
             GroupPerson groupPerson = super.loadById(entity.getId());
-            groupPerson.setUserRole(entity.getUserRole());
+            groupPerson.setUserRoleString(entity.getUserRoleString());
             super.update(groupPerson);
         }else {
             super.save(entity);
         }
     }
+
 }
