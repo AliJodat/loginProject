@@ -7,7 +7,9 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <jsp:include page="/Scripts/includes.jsp"></jsp:include>
+
+    <jsp:include page="/resources/static/includes.jsp"></jsp:include>
+
     <title>Login Form</title>
     <script type="text/javascript" language="JavaScript" >
     $(document).ready(function() {
@@ -25,7 +27,6 @@
             data: JSON.stringify(sendJson),
             dataType: "json",
             success: function (res) {
-
                 window.location.assign("/index");
             },else:function (e) {
                 alert("نام کاربری و یا رمز وارد شده صحیح نمی باشد !");
@@ -33,7 +34,7 @@
         });
     }
     function changeToSetup() {
-        window.location.assign("/login")
+        window.location.assign("Login/insertUser")
     }
     </script>
 </head>
