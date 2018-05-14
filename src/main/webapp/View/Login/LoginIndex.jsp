@@ -8,34 +8,37 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <jsp:include page="/resources/static/includes.jsp"></jsp:include>
+    <jsp:include page="/assets/includes.jsp"></jsp:include>
 
     <title>Login Form</title>
-    <script type="text/javascript" language="JavaScript" >
-    $(document).ready(function() {
-    });
-    function saveStudentAJAX() {
-        var sendJson = {
-            username: $("#txtUsername").val(),
-            password: $("#txtPassword").val()
-        };
-        console.log(JSON.stringify(sendJson));
-        $.ajax({
-            type: "POST",
-            contentType: "application/json; charset=utf-8",
-            url: '<c:url value="/getUserName/findPersonalByUsername"/>',
-            data: JSON.stringify(sendJson),
-            dataType: "json",
-            success: function (res) {
-                window.location.assign("/index");
-            },else:function (e) {
-                alert("نام کاربری و یا رمز وارد شده صحیح نمی باشد !");
-            }
+    <script type="text/javascript" language="JavaScript">
+        $(document).ready(function () {
+
         });
-    }
-    function changeToSetup() {
-        window.location.assign("Login/insertUser")
-    }
+
+        function saveStudentAJAX() {
+            var sendJson = {
+                username: $("#txtUsername").val(),
+                password: $("#txtPassword").val()
+            };
+            console.log(JSON.stringify(sendJson));
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: '<c:url value="/getUserName/findPersonalByUsername"/>',
+                data: JSON.stringify(sendJson),
+                dataType: "json",
+                success: function (res) {
+                    window.location.assign("index.jsp");
+                }, else: function (res) {
+                    alert("نام کاربری و یا رمز وارد شده صحیح نمی باشد !");
+                }
+            });
+        }
+
+        function changeToSetup() {
+            window.location.assign("Login/insertUser")
+        }
     </script>
 </head>
 <body>
@@ -44,17 +47,24 @@
         <div class="login-form col-sm-4">
             <form id="submitForm" enctype="application/json">
                 <h2 class="text-center"> مشخصات</h2>
-                <input id="txtUsername" type="text" class="form-control rtl mt-2" placeholder="نام کاربری" required="required">
-                <input id="txtPassword" type="password" class="form-control rtl mt-2" placeholder="رمز عبور" required="required">
-                <button id="enterButt" type="button" class="btn btn-primary btn-block mt-2" onclick="saveStudentAJAX()">ورود</button>
+                <input id="txtUsername" type="text" class="form-control rtl mt-2" placeholder="نام کاربری"
+                       required="required">
+                <input id="txtPassword" type="password" class="form-control rtl mt-2" placeholder="رمز عبور"
+                       required="required">
+                <button id="enterButt" type="button" class="btn btn-primary btn-block mt-2" onclick="saveStudentAJAX()">
+                    ورود
+                </button>
                 <%--<div class="clearfix">
                     <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
                     <a href="#" class="pull-right">Forgot Password?</a>
                 </div>--%>
             </form>
-            <button id="btnChangeToSetup" type="button" class="btn btn-info btn-block mt-2" onclick="changeToSetup()">ساخت حساب کاربری جدید</button>
+            <button id="btnChangeToSetup" type="button" class="btn btn-info btn-block mt-2" onclick="changeToSetup()">
+                ساخت حساب کاربری جدید
+            </button>
         </div>
     </div>
+
 </div>
 </body>
 </html>

@@ -14,7 +14,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <jsp:include page="/Scripts/includes.jsp"></jsp:include>
+    <jsp:include page="/assets/includes.jsp"></jsp:include>
     <title>Login Form</title>
 
 

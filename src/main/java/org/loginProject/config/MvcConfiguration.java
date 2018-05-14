@@ -37,9 +37,14 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
     }
 
     @Override
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
+    }
+
+    @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/resources/**")
-                .addResourceLocations("/resources/");
+        registry.addResourceHandler("/assets/**")
+                .addResourceLocations("/assets/");
     }
 
     /*private static final String[] RESOURCE_LOCATIONS = {
