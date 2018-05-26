@@ -2,6 +2,7 @@ package org.loginProject.repository.impl;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.loginProject.model.GroupPerson;
 import org.loginProject.model.Personal;
 import org.loginProject.repository.IGroupPersonRepo;
 import org.loginProject.repository.generic.GenericRepository;
@@ -19,11 +20,11 @@ import javax.persistence.Query;
 
 @Transactional
 @Repository
-public class GroupPersonRepo extends GenericRepository<Personal> implements IGroupPersonRepo {
+public class GroupPersonRepo extends GenericRepository<GroupPerson> implements IGroupPersonRepo {
 
     @Override
-    protected Class<Personal> getDomainClass() {
-        return Personal.class;
+    protected Class<GroupPerson> getDomainClass() {
+        return GroupPerson.class;
     }
 
 

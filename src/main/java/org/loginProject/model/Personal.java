@@ -25,10 +25,9 @@ public class Personal extends BaseEntity<Long> implements Serializable {
     @Column(unique = true)
     private Integer code;
 
-    @OneToMany(mappedBy = "personal")
-    private Set<GroupPerson> groupPersonSet;
-
-
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_role")
+    private Set<GroupPerson> roles;
 
 
     public String getName() {
@@ -71,11 +70,11 @@ public class Personal extends BaseEntity<Long> implements Serializable {
         this.code = code;
     }
 
-    public void setGroupPersonSet(Set<GroupPerson> groupPersonSet) {
-        this.groupPersonSet = groupPersonSet;
+    public Set<GroupPerson> getRoles() {
+        return roles;
     }
 
-    public Set<GroupPerson> getGroupPersonSet() {
-        return groupPersonSet;
+    public void setRoles(Set<GroupPerson> roles) {
+        this.roles = roles;
     }
 }

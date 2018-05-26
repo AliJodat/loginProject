@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 
 @Service
 public class GroupPersonService extends GenericService<GroupPerson> implements IGroupPersonService {
@@ -25,17 +27,20 @@ public class GroupPersonService extends GenericService<GroupPerson> implements I
     }
 
 
-
     @Override
     @Transactional
     public void save(GroupPerson entity) {
         if(entity.getId() == null || entity.getId() > -1){
             GroupPerson groupPerson = super.loadById(entity.getId());
-            groupPerson.setUserRoleString(entity.getUserRoleString());
+            groupPerson.setRole(entity.getRole());
             super.update(groupPerson);
         }else {
             super.save(entity);
         }
     }
 
+    @Override
+    public List<GroupPerson> getAll() {
+        return super.getAll();
+    }
 }

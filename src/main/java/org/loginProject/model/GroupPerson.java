@@ -12,19 +12,19 @@ import java.util.Set;
 @Table(name = "GROUP_PERSON")
 public class GroupPerson extends BaseEntity<Long> implements Serializable {
 
-    @Column
-    private String userRoleString;
 
-    @ManyToOne
+    @Column
+    private String role;
+
     private Personal personal;
 
 
-    public void setUserRoleString(String userRoleString) {
-        this.userRoleString = userRoleString;
+    public String getRole() {
+        return role;
     }
 
-    public String getUserRoleString() {
-        return userRoleString;
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public Personal getPersonal() {

@@ -1,9 +1,7 @@
 package org.loginProject.config;
 
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.*;
-import org.springframework.web.servlet.resource.PathResourceResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
@@ -33,7 +31,7 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         super.addViewControllers(registry);
-        registry.addViewController("/").setViewName("Login/LoginIndex");
+        registry.addViewController("/").setViewName("Login/Signin");
     }
 
     @Override
@@ -46,17 +44,4 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/assets/**")
                 .addResourceLocations("/assets/");
     }
-
-    /*private static final String[] RESOURCE_LOCATIONS = {
-            "classpath:/META-INF/resources/", "classpath:/resources/",
-            "classpath:/static/", "classpath:/public/" };
-
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        if (!registry.hasMappingForPattern("/Scripts/**")) {
-            registry.addResourceHandler("/Scripts/**").addResourceLocations(
-                    "classpath:/View/Scripts/");
-        }
-
-    }*/
 }

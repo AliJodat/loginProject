@@ -15,7 +15,7 @@ public abstract class GenericService<T> implements IGenericService<T> {
     protected abstract IGenericRepository<T> getGenericRepo();
 
     @Override
-    public List getAll() {
+    public List<T> getAll() {
         return getGenericRepo().getAll();
     }
 

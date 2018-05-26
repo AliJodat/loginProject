@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<%@ page pageEncoding="UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
@@ -11,33 +11,33 @@
     <title>Insert_Group_Persnal</title>
 </head>
 <script type="text/javascript" language="JavaScript">
+
     $(document).ready(function () {
-        $.getJSON('<c:url value="/Login/Insert_Group_personal" />', function (indexEnter) {
-            //$('#trTemplate').tmpl(indexEnter).appendTo('#reportGrid');
+        $.getJSON('<c:url value="/getInsertGroupPersonal/getAll" />', function (groupList) {
+            $('#trGroupList').tmpl(groupList).appendTo('#groupListGrid');
         });
     });
 
     function saveNewGroupUserAJAX() {
         var sendJson = {
             id: -1,
-            userRoleString: $("#txtName").val()
+            role: $("#txtName").val()
         };
-        console.log(JSON.stringify(sendJson));
         $.ajax({
             type: "POST",
             contentType: "application/json; charset=utf-8",
-            url: '<c:url value="/getInsert_Group_personal/saveNewGroup"/>',
+            url: '<c:url value="/getInsertGroupPersonal/saveNewGroup"/>',
             data: JSON.stringify(sendJson),
             dataType: "json",
             success: function (res) {
-                window.location.assign("/");
+                window.location = '<c:url value="/View/admin/index.jsp"/>';
             }
         });
     }
 </script>
 <body>
 <div class="container">
-    <div class="row text-center">
+    <div class="row">
         <div class="col-sm-4">
             <div class="Insert_Group_persnal">
                 <form id="submitForm" enctype="application/json">
@@ -52,6 +52,34 @@
                         </button>
                     </div>
                 </form>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="col-sm-12">
+                <label class="" style="font-size: 3em; font-family: 'Century Gothic';color: #428ea0;">لیست گروهها</label>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="table-responsive table-hover">
+
+                    <script id="trGroupList" type="text/x-jQuery-tmpl">
+                         <tr>
+                              <td>${id}</td>
+                              <td>${role}</td>
+			             </tr>
+                    </script>
+
+                    <table id="groupListGrid" class="table table-striped text-center ">
+                        <thead>
+                        <tr>
+                            <th class="text-center">ID</th>
+                            <th class="text-center">Roles</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

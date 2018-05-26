@@ -10,16 +10,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 @SpringBootApplication
-@EnableAutoConfiguration
 public class SpringBootApp extends SpringBootServletInitializer{
-
-    /*@Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-        return builder.sources(SpringBootApp.class);
-    }*/
 
     public static void main(String[] args) throws Exception {
         SpringApplication.run(SpringBootApp.class, args);
     }
+
 }
 

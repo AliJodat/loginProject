@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="true" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="true" %>
 <%@ page pageEncoding="UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -18,12 +18,14 @@
     <script type="text/javascript" language="JavaScript">
 
         var indexList = {};
+        var groupList = {};
 
         $(document).ready(function () {
             $.getJSON('<c:url value="/getUserName/getAll" />', function (indexList) {
                 $('#trTemplateList').tmpl(indexList).appendTo('#listGrid');
             });
         });
+
 
     </script>
 </head>
@@ -32,14 +34,13 @@
     <div class="row">
 
         <div class="col-sm-4">
-            <h1>THIS IS INDEX !</h1>
+            <h1>لیست کاربران</h1>
         </div>
 
     </div>
     <div class="row">
-        <div class="col-sm-8">
-            <div class="table-responsive">
-
+        <div class="col-sm-12">
+            <div class="table-responsive table-hover">
                 <script id="trTemplateList" type="text/x-jQuery-tmpl">
                <tr>
                     <td>${id}</td>
@@ -47,8 +48,21 @@
                     <td>${family}</td>
                     <td>${username}</td>
                     <td>${password}</td>
-                    <td>${userRole}</td>
+                    <td>
+                    <select class="form-control">
+                      <option value="-1">...</option>
+                      <option value="1">ADMIN</option>
+                      <option value="2">USER</option>
+                    </select>
+
+                    </td>
+                    <td>
+                    <button type="button" class="btn btn-success" onclick="" >ثبت</button>
+                    <button type="button" class="btn btn-danger" onclick="" >حذف</button>
+                    </td>
 			   </tr>
+
+
                 </script>
 
                 <table id="listGrid" class="table table-striped text-center">
@@ -60,6 +74,7 @@
                         <th class="text-center">Username</th>
                         <th class="text-center">Password</th>
                         <th class="text-center">Role</th>
+                        <th class="text-center">Operation</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -67,8 +82,16 @@
                 </table>
             </div>
         </div>
-        <div class="col-sm-4">
-            <label class="" style="font-size: 3em; font-family: 'Century Gothic';color: #428ea0;">Personnel Lists</label>
+        <div class="col-sm-5">
+            <div class="col-sm-12">
+                <label class="" style="font-size: 3em; font-family: 'Century Gothic';color: #428ea0;">لیست
+                    گروهها</label>
+            </div>
+            <div class="col-sm-12 form-group">
+                <button id="btnSubmit" type="button" class="btn btn-primary btn-block"
+                        onclick="window.location = 'Insert_Group_personal.jsp'">ساخت گروه کاربری
+                </button>
+            </div>
         </div>
     </div>
 

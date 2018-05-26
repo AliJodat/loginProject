@@ -24,11 +24,6 @@
 
 
     <script type="text/javascript" language="JavaScript" >
-        $(document).ready(function () {
-            $.getJSON('<c:url value="/Login/Login" />', function (indexEnter) {
-             //   $('#trTemplate').tmpl(indexEnter).appendTo('#reportGrid');
-            });
-        });
 
         function saveNewUserAJAX() {
             var sendJson = {
@@ -47,9 +42,15 @@
                 data: JSON.stringify(sendJson),
                 dataType: "json",
                 success: function (res) {
-                    window.location.assign("/");
+                    window.location = '<c:url value="/View/Login/Signin.jsp"/>';
+                },else : function (res) {
+                    alert("اشتباه داری میزنی دادا !!!");
                 }
             });
+        }
+
+        function backToSignin() {
+            window.location = '<c:url value="/View/Login/Signin.jsp"/>';
         }
 
     </script>
@@ -79,6 +80,9 @@
         </div>
 
     </form>
+    <button id="btnChangeToSetup" type="button" class="btn btn-info btn-block mt-2" onclick="backToSignin()">
+        برگشت به صفحه ورود
+    </button>
 
 </div>
 </body>

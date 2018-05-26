@@ -29,7 +29,7 @@
                 data: JSON.stringify(sendJson),
                 dataType: "json",
                 success: function (res) {
-                    window.location.assign("index.jsp");
+                    window.location = '<c:url value="/View/admin/index.jsp"/>';
                 }, else: function (res) {
                     alert("نام کاربری و یا رمز وارد شده صحیح نمی باشد !");
                 }
@@ -37,7 +37,7 @@
         }
 
         function changeToSetup() {
-            window.location.assign("Login/insertUser")
+            window.location = '<c:url value="/View/Login/Signup.jsp"/>'
         }
     </script>
 </head>
