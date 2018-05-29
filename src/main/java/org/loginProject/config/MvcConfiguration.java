@@ -44,4 +44,6 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/assets/**")
                 .addResourceLocations("/assets/");
     }
+
+
 }

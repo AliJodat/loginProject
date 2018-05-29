@@ -38,7 +38,7 @@
             $.ajax({
                 type: "POST",
                 contentType: "application/json; charset=utf-8",
-                url: '<c:url value="/getUserName/saveNewUser"/>',
+                url: '<c:url value="/rest/getUserName/saveNewUser"/>',
                 data: JSON.stringify(sendJson),
                 dataType: "json",
                 success: function (res) {

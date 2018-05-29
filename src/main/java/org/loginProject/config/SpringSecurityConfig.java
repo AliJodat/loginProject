@@ -36,7 +36,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                    .antMatchers("/View/Login/Signup.jsp").permitAll()
+                    .antMatchers("/View/Login/Signup.jsp","/rest/**").permitAll()
                     .antMatchers("/View/admin/**").hasAnyRole("ADMIN")
                     .antMatchers("/View/user/**").hasAnyRole("USER")
                 .anyRequest()
@@ -53,4 +53,6 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .ignoring()
                 .antMatchers("/assets/**");
     }
+
+
 }

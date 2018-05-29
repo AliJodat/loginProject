@@ -21,7 +21,7 @@
         var groupList = {};
 
         $(document).ready(function () {
-            $.getJSON('<c:url value="/getUserName/getAll" />', function (indexList) {
+            $.getJSON('<c:url value="/rest/getUserName/getAll" />', function (indexList) {
                 $('#trTemplateList').tmpl(indexList).appendTo('#listGrid');
             });
         });
