@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Access-Control-Allow-Origin: http://www.omdbapi.com-->
+    <meta charset="UTF-8">
+    <title>MovieDatabase</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"/>
+    <script src="assets/jqurey/jquery-3.3.1.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/jquery-tmpl/jquery.tmpl.js"></script>
+
+    <script type="text/javascript" language="JavaScript">
+        $(document).ready(function () {
+            var restUrl = "https://www.omdbapi.com/?apikey=a7aaea97";
+            $("button").click(function(){
+                var name = $("#txtTitleSearch").val();
+                $.getJSON(restUrl + "&t=" + encodeURI(name)).then( function (entity) {
+                    console.log(entity);
+                });
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="tile-body">
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="col-sm-2">
+                            <label class="control-label text-center">Title</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <input id="txtTitleSearch" required class="form-control" placeholder="Enter Title" autofocus/>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="col-sm-2">
+                            <label class="col-sm-2 control-label text-center" >Year</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <input id="txtYearSearch" class="form-control" placeholder="Enter Year" />
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <button id="btnSearch" onclick=""
+                                class="btn btn-success btn-ef btn-ef-3 btn-ef-3c mb-10">Search
+                            <i class="fa fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <p id="movieName"></p>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
